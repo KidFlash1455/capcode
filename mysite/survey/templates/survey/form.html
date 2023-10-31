@@ -1,0 +1,5 @@
+<form method = "POST" action="{% url 'survey:form' %}" enctype="multipart/form-data">
+{% csrf_token %}
+{{form}}
+<button>Submit</button>
+</form>
