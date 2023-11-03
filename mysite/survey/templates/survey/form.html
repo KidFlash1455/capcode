@@ -1,5 +1,10 @@
 <form method = "POST" action="{% url 'survey:form' %}" enctype="multipart/form-data">
 {% csrf_token %}
-{{form}}
+<!--{{form}} -->
+{{ form.non_field_errors }}
+<div class="fieldWrapper">
+    <label for="{{ form.q1.label }}">Email subject:</label>
+    {{ form.q1 }}
+</div>
 <button>Submit</button>
 </form>

@@ -1,0 +1,38 @@
+<form method="POST" action="{% url 'survey:form' %}" enctype="multipart/form-data">
+    {% csrf_token %}
+
+    {% comment %} <!--First Name-->
+    {{ form.non_field_errors }}
+    <div class="fieldWrapper">
+        <label for="{{ form.q1.label }}">{{ form.q1.label }}:</label>
+        <div> </div>
+        {{ form.q1 }}
+    </div>
+    <!--Last Name-->
+    <div class="fieldWrapper">
+        <label for="{{ form.q2.label }}">{{ form.q2.label }}:</label>
+        <div> </div>
+        {{ form.q2 }}
+    </div>
+    <!--Suffix-->
+    <div class="fieldWrapper">
+        <label for="{{ form.q3.label }}">{{ form.q3.label }}:</label>
+        <div> </div>
+        {{ form.q3 }}
+    </div>
+    <!--Email-->
+    <div class="fieldWrapper">
+        <label for="{{ form.q4.label }}">{{ form.q4.label }}:</label>
+        <div> </div>
+        {{ form.q4 }} 
+    </div> {% endcomment %}
+
+    {% for field in form %}
+        <div class="fieldWrapper">
+            {{ field.label }} 
+            <br>
+            {{ field }}
+        </div>
+    {% endfor %}
+    <button>Submit</button>
+</form>
